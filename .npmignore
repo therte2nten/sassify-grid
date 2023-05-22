@@ -1,0 +1,9 @@
+.github/
+.vscode/
+docs/
+node_modules/
+tests/
+.gitignore
+.editorconfig
+.npmignore
+CODEOWNERS

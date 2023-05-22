@@ -1,0 +1,35 @@
+@use '../index' as * with (
+	$dvalues--grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px,
+		xxl: 1400px
+	),
+	$dvalues--container-max-widths: (
+		sm: 540px,
+		md: 720px,
+		lg: 960px,
+		xl: 1140px,
+		xxl: 1320px
+	),
+	$dvalues--grid-columns: 12,
+	$dvalues--gutter-width: 30px,
+	$setting--create-class__no-gutters: true,
+	$setting--create-class__row: true,
+	$setting--create-class__container-fluid: true,
+	$setting--create-class__container: true,
+	$setting--minimal-reset: true,
+	$setting--class-naming: (
+		'container': 'con',
+		'container-fluid': 'conf',
+		'row': 'r',
+		'col': 'c',
+		'order': 'o',
+		'offset': 'off',
+		'first': 'f',
+		'last': 'l',
+		'auto': 'a'
+	)
+);

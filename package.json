@@ -1,10 +1,11 @@
 {
   "name": "@therteenten/sassify-grid",
-  "version": "3.3.6",
+  "version": "3.336.1",
   "description": "Простая реализация 12-ти колоночной сетки на CSS-препроцессоре @sass",
   "main": "index.scss",
 	"scripts": {
-    "test": "npx sass sassify-grid.scss:dist/stylesheets/sassify-grid.css"
+    "test": "npx sass tests/index.scss:tests/dist/stylesheets/sassify-grid.test.css",
+    "build": "npx sass index.scss:dist/stylesheets/sassify-grid.css"
   },
   "repository": {
     "type": "git",

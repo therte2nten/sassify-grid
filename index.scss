@@ -7,7 +7,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+@forward 'config';
+
 @use 'core/init' as *;
 
-// Инициализация сетки
 @include init();
