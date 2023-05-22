@@ -9,6 +9,9 @@
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 /// @link https://github.com/twbs/bootstrap Bootstrap GitHub
 @function breakpoint-max($name, $breakpoints: $dvalues--grid-breakpoints) {
+
 	$-next: breakpoint-next($name, $breakpoints);
+
 	@return if($-next, breakpoint-min($-next, $breakpoints) - .02, null);
+
 }

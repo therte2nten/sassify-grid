@@ -1,0 +1,122 @@
+@use '../config' as config;
+
+@use 'make/container' as *;
+@use 'make/container-max-widths' as *;
+@use 'make/row' as *;
+@use 'make/grid-colums' as *;
+
+@use 'utilities/assert/ascending' as *;
+@use 'utilities/assert/starts-at-zero' as *;
+
+@use 'vendor/sassify' as sassify;
+
+/// Миксин запускает другие миксины и функции, которые
+/// генерируют сетку.
+/// ---
+/// @name init
+/// @since 23.05.2023
+/// @access public
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin init() {
+
+	@include -minimal-reset();
+
+	@include -create-container();
+	@include -create-container-fluid();
+	@include -create-row();
+	@include -create-no-gutters();
+
+	@include make-grid-columns();
+
+	@include assert-starts-at-zero(config.$dvalues--grid-breakpoints, "$dvalues--grid-breakpoints");
+	@include assert-ascending(config.$dvalues--grid-breakpoints, "$dvalues--grid-breakpoints");
+	@include assert-ascending(config.$dvalues--container-max-widths, "$dvalues--container-max-widths");
+
+
+
+}
+
+/// Миксин генерирует ну очень простой ресет.
+/// ---
+/// @name -minimal-reset
+/// @since 23.05.2023
+/// @access private
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin -minimal-reset() {
+	@if config.$setting--minimal-reset == true {
+		*,
+		*::before,
+		*::after {
+			padding: 0;
+			margin: 0;
+			@include sassify.box-sizing(border-box);
+		}
+	}
+}
+
+/// @name -create-container
+/// @since 23.05.2023
+/// @access private
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin -create-container() {
+	@if config.$setting--create-class__container == true {
+		.container {
+			@include make-container();
+			@include make-container-max-widths();
+		}
+	}
+}
+
+/// @name -create-container-fluid
+/// @since 23.05.2023
+/// @access private
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin -create-container-fluid() {
+	@if config.$setting--create-class__container-fluid == true {
+		.container-fluid {
+			@include make-container();
+		}
+	}
+}
+
+/// @name -create-row
+/// @since 23.05.2023
+/// @access private
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin -create-row() {
+	@if config.$setting--create-class__row == true {
+		.row {
+			@include make-row();
+		}
+	}
+}
+
+/// @name -create-no-gutters
+/// @since 23.05.2023
+/// @access private
+/// @author Haba Kudzaev (therteenten)
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+@mixin -create-no-gutters() {
+
+	@if config.$setting--create-class__no-gutters == true {
+
+		.no-gutters {
+			margin-right: 0;
+			margin-left: 0;
+
+			> .col,
+			> [class*="col-"] {
+				padding-right: 0;
+				padding-left: 0;
+			}
+
+		}
+
+	}
+
+}

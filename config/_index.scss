@@ -1,6 +1,75 @@
-@forward 'default-values';
+/// @name dvalues--grid-breakpoints
+/// @group DefaultValues
+/// @since 23.05.2023
+/// @access public
+/// @type map
+$dvalues--grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+) !default;
 
+/// @name dvalues--container-max-widths
+/// @group DefaultValues
+/// @since 23.05.2023
+/// @access public
+/// @type map
+$dvalues--container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1320px
+) !default;
 
+/// @name dvalues--grid-columns
+/// @group DefaultValues
+/// @since 23.05.2023
+/// @access public
+/// @type number
+$dvalues--grid-columns: 12 !default;
 
+/// @name dvalues--gutter-width
+/// @group DefaultValues
+/// @since 23.05.2023
+/// @access public
+/// @type number
+$dvalues--gutter-width: 30px !default;
 
+/// @name setting--create-class__no-gutters
+/// @group Configs
+/// @since 23.05.2023
+/// @access public
+/// @type boolean
+$setting--create-class__no-gutters: true !default;
 
+/// @name setting--create-class__row
+/// @group Configs
+/// @since 23.05.2023
+/// @access public
+/// @type boolean
+$setting--create-class__row: true !default;
+
+/// @name setting--create-class__container-fluid
+/// @group Configs
+/// @since 23.05.2023
+/// @access public
+/// @type boolean
+$setting--create-class__container-fluid: true !default;
+
+/// @name setting--create-class__container
+/// @group Configs
+/// @since 23.05.2023
+/// @access public
+/// @type boolean
+$setting--create-class__container: true !default;
+
+/// @name setting--minimal-reset
+/// @group Configs
+/// @since 23.05.2023
+/// @access public
+/// @type boolean
+$setting--minimal-reset: true !default;

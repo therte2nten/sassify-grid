@@ -17,7 +17,11 @@
 /// @prop {number} $columns [$dvalues--grid-columns]
 /// @prop {number} $gutter [$dvalues--gutter-width]
 /// @prop {number} $breakpoints [$dvalues--grid-breakpoints]
-@mixin make-grid-columns($columns: $dvalues--grid-columns, $gutter: $dvalues--gutter-width, $breakpoints: $dvalues--grid-breakpoints) {
+@mixin make-grid-columns(
+	$columns: $dvalues--grid-columns,
+	$gutter: $dvalues--gutter-width,
+	$breakpoints: $dvalues--grid-breakpoints) {
+
 	// Common properties for all breakpoints
 	%grid-column {
 		position: relative;
@@ -27,6 +31,7 @@
 	}
 
 	@each $breakpoint in map-keys($breakpoints) {
+
 		$-infix: breakpoint-infix($breakpoint, $breakpoints);
 
 		// Allow columns to stretch full width below their breakpoints
@@ -35,18 +40,21 @@
 				@extend %grid-column;
 			}
 		}
+
 		.col#{$-infix},
 		.col#{$-infix}-auto {
 			@extend %grid-column;
 		}
 
 		@include media-breakpoint-up($breakpoint, $breakpoints) {
+
 			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
 			.col#{$-infix} {
 				flex-basis: 0;
 				flex-grow: 1;
 				max-width: 100%;
 			}
+
 			.col#{$-infix}-auto {
 				flex: 0 0 auto;
 				width: auto;
@@ -75,6 +83,9 @@
 					}
 				}
 			}
+
 		}
+
 	}
+
 }

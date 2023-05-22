@@ -1,6 +1,6 @@
 {
   "name": "@therteenten/sassify-grid",
-  "version": "1.0.0",
+  "version": "3.3.6",
   "description": "Простая реализация 12-ти колоночной сетки на CSS-препроцессоре @sass",
   "main": "index.scss",
   "scripts": {

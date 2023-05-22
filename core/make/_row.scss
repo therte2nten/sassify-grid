@@ -1,5 +1,6 @@
 @use "sass:math";
 @use '../../config' as *;
+@use '../vendor/sassify' as sassify;
 
 /// @name make-row
 /// @since 23.05.2023
@@ -10,8 +11,11 @@
 /// @link https://github.com/twbs/bootstrap Bootstrap GitHub
 /// @prop {number} $gutter [$dvalues--gutter-width]
 @mixin make-row($gutter: $dvalues--gutter-width) {
-	display: flex;
-	flex-wrap: wrap;
+
 	margin-right: -$gutter * 0.5;
 	margin-left: -$gutter * 0.5;
+
+	@include sassify.flexbox();
+	@include sassify.flex-wrap(wrap);
+
 }
