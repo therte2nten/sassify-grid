@@ -62,6 +62,16 @@
 	> > The Sass team wants to allow for a large amount of time when `@use` and `@import` can coexist, to help the ecosystem smoothly migrate to the new system. However, doing away with `@import` entirely is the ultimate goal for simplicity, performance, and CSS compatibility.
 	> > <details><summary>Перевод (машинный)</summary><br><p>Команда Sass хочет предусмотреть большое количество времени, когда <code>@use</code>  и <code>@import</code> могут сосуществовать, чтобы помочь экосистеме плавно перейти на новую систему. Однако полный отказ от <code>@import</code> является конечной целью для простоты, производительности и совместимости с CSS.</p></details>
 
+	> Если Вам нужен уже скомпилированный CSS-файл с сеткой, то подключите в HTML след. файл:
+	>
+	> ```html
+	> <link rel="stylesheet" href="node_modules/@therteenten/sassify-grid/dist/stylesheets/sassify-grid.css">
+	> ```
+	> Или в CSS-файл:
+	> ```css
+	> @import url("node_modules/@therteenten/sassify-grid/dist/stylesheets/sassify-grid.css");
+	> ```
+
 4. **Готово!**
 
 ## Сообщество

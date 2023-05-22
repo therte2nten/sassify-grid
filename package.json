@@ -3,8 +3,8 @@
   "version": "3.3.6",
   "description": "Простая реализация 12-ти колоночной сетки на CSS-препроцессоре @sass",
   "main": "index.scss",
-  "scripts": {
-    "test": "npx sass index.scss:dist/stylesheets/sassify-grid.css"
+	"scripts": {
+    "test": "npx sass sassify-grid.scss:dist/stylesheets/sassify-grid.css"
   },
   "repository": {
     "type": "git",
@@ -15,6 +15,8 @@
     "sass",
     "scss",
     "grid-system",
+    "bootstrap",
+    "bootstrap-grid",
     "therteenten"
   ],
   "author": "Haba Kudzaev <therteenten@inbox.ru>",
