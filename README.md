@@ -1,3 +1,5 @@
+![Изображение-баннер с логотипом проекта Sassify и логотипом GitHub](https://github.com/therteenten/sassify/blob/main/.github/images/sassify_banner_github.png?raw=true)
+
 <img src="https://github.com/therteenten/sassify-grid/blob/main/.github/images/sassify-grid_logo.png?raw=true" width="96" height="96" align="right" alt="Логотип проекта Sassify Grid"> [Sassify Grid](https://github.com/therteenten/sassify-grid.git)
 ===
 
