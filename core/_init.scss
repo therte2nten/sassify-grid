@@ -63,7 +63,7 @@
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 @mixin -create-container() {
 	@if config.$setting--create-class__container == true {
-		.container {
+		.#{sassify.map-deep-get(config.$setting--class-naming, 'container')} {
 			@include make-container();
 			@include make-container-max-widths();
 		}
@@ -77,7 +77,7 @@
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 @mixin -create-container-fluid() {
 	@if config.$setting--create-class__container-fluid == true {
-		.container-fluid {
+		.#{sassify.map-deep-get(config.$setting--class-naming, 'container-fluid')} {
 			@include make-container();
 		}
 	}
@@ -90,7 +90,7 @@
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 @mixin -create-row() {
 	@if config.$setting--create-class__row == true {
-		.row {
+		.#{sassify.map-deep-get(config.$setting--class-naming, 'row')} {
 			@include make-row();
 		}
 	}
@@ -109,8 +109,8 @@
 			margin-right: 0;
 			margin-left: 0;
 
-			> .col,
-			> [class*="col-"] {
+			> .#{sassify.map-deep-get(config.$setting--class-naming, 'col')},
+			> [class*="#{sassify.map-deep-get(config.$setting--class-naming, 'col')}-"] {
 				padding-right: 0;
 				padding-left: 0;
 			}

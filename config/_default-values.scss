@@ -1,0 +1,36 @@
+/// @name dvalues--grid-breakpoints
+/// @since 23.05.2023
+/// @access public
+/// @type map
+$dvalues--grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+) !default;
+
+/// @name dvalues--container-max-widths
+/// @since 23.05.2023
+/// @access public
+/// @type map
+$dvalues--container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1320px
+) !default;
+
+/// @name dvalues--grid-columns
+/// @since 23.05.2023
+/// @access public
+/// @type number
+$dvalues--grid-columns: 12 !default;
+
+/// @name dvalues--gutter-width
+/// @since 23.05.2023
+/// @access public
+/// @type number
+$dvalues--gutter-width: 30px !default;

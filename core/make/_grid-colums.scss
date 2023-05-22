@@ -1,7 +1,8 @@
 @use "sass:math";
 @use "sass:map";
 
-@use '../../config' as *;
+@use '../../config' as config;
+@use '../vendor/sassify' as sassify;
 @use '../make/col-offset' as *;
 @use '../make/col' as *;
 @use '../utilities/brakepoint' as *;
@@ -14,13 +15,13 @@
 /// @author The Bootstrap Authors
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 /// @link https://github.com/twbs/bootstrap Bootstrap GitHub
-/// @prop {number} $columns [$dvalues--grid-columns]
-/// @prop {number} $gutter [$dvalues--gutter-width]
-/// @prop {number} $breakpoints [$dvalues--grid-breakpoints]
+/// @prop {number} $columns [config.$dvalues--grid-columns]
+/// @prop {number} $gutter [config.$dvalues--gutter-width]
+/// @prop {number} $breakpoints [config.$dvalues--grid-breakpoints]
 @mixin make-grid-columns(
-	$columns: $dvalues--grid-columns,
-	$gutter: $dvalues--gutter-width,
-	$breakpoints: $dvalues--grid-breakpoints) {
+	$columns: config.$dvalues--grid-columns,
+	$gutter: config.$dvalues--gutter-width,
+	$breakpoints: config.$dvalues--grid-breakpoints) {
 
 	// Common properties for all breakpoints
 	%grid-column {
@@ -36,49 +37,49 @@
 
 		// Allow columns to stretch full width below their breakpoints
 		@for $-i from 1 through $columns {
-			.col#{$-infix}-#{$-i} {
+			.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix}-#{$-i} {
 				@extend %grid-column;
 			}
 		}
 
-		.col#{$-infix},
-		.col#{$-infix}-auto {
+		.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix},
+		.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix}-#{sassify.map-deep-get(config.$setting--class-naming, 'auto')} {
 			@extend %grid-column;
 		}
 
 		@include media-breakpoint-up($breakpoint, $breakpoints) {
 
-			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
-			.col#{$-infix} {
+			// Provide basic `.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}-{bp}` classes for equal-width flexbox columns
+			.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix} {
 				flex-basis: 0;
 				flex-grow: 1;
 				max-width: 100%;
 			}
 
-			.col#{$-infix}-auto {
+			.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix}-auto {
 				flex: 0 0 auto;
 				width: auto;
 				max-width: 100%; // Reset earlier grid tiers
 			}
 
 			@for $-i from 1 through $columns {
-				.col#{$-infix}-#{$-i} {
+				.#{sassify.map-deep-get(config.$setting--class-naming, 'col')}#{$-infix}-#{$-i} {
 					@include make-col($-i, $columns);
 				}
 			}
 
-			.order#{$-infix}-first { order: -1; }
+			.#{sassify.map-deep-get(config.$setting--class-naming, 'order')}#{$-infix}-#{sassify.map-deep-get(config.$setting--class-naming, 'first')} { order: -1; }
 
-			.order#{$-infix}-last { order: $columns + 1; }
+			.#{sassify.map-deep-get(config.$setting--class-naming, 'order')}#{$-infix}-#{sassify.map-deep-get(config.$setting--class-naming, 'last')} { order: $columns + 1; }
 
 			@for $-i from 0 through $columns {
-				.order#{$-infix}-#{$-i} { order: $-i; }
+				.#{sassify.map-deep-get(config.$setting--class-naming, 'order')}#{$-infix}-#{$-i} { order: $-i; }
 			}
 
 			// `$columns - 1` because offsetting by the width of an entire row isn't possible
 			@for $-i from 0 through ($columns - 1) {
-				@if not ($-infix == "" and $-i == 0) { // Avoid emitting useless .offset-0
-					.offset#{$-infix}-#{$-i} {
+				@if not ($-infix == "" and $-i == 0) { // Avoid emitting useless .#{sassify.map-deep-get(config.$setting--class-naming, 'offset')}-0
+					.#{sassify.map-deep-get(config.$setting--class-naming, 'offset')}#{$-infix}-#{$-i} {
 						@include make-col-offset($-i, $columns);
 					}
 				}

@@ -1,4 +1,4 @@
-@use '../../config' as *;
+@use '../../config' as config;
 @use '../media-brakepoint/up' as *;
 
 /// For each breakpoint, define the maximum width of
@@ -14,8 +14,8 @@
 /// @prop {number} $max-widths [$dvalues--container-max-widths]
 /// @prop {number} $breakpoints [$dvalues--grid-breakpoints]
 @mixin make-container-max-widths(
-	$max-widths: $dvalues--container-max-widths,
-	$breakpoints: $dvalues--grid-breakpoints) {
+	$max-widths: config.$dvalues--container-max-widths,
+	$breakpoints: config.$dvalues--grid-breakpoints) {
 
 	@each $-breakpoint, $-container-max-width in $max-widths {
 

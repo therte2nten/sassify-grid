@@ -1,5 +1,5 @@
 @use "sass:math";
-@use '../../config' as *;
+@use '../../config' as config;
 
 /// @name make-container
 /// @since 23.05.2023
@@ -8,8 +8,8 @@
 /// @author The Bootstrap Authors
 /// @link https://github.com/therteenten/sassify-grid Sassify Grid
 /// @link https://github.com/twbs/bootstrap Bootstrap GitHub
-/// @prop {number} $gutter [$dvalues--gutter-width]
-@mixin make-container($gutter: $dvalues--gutter-width) {
+/// @prop {number} $gutter [config.$dvalues--gutter-width]
+@mixin make-container($gutter: config.$dvalues--gutter-width) {
 	width: 100%;
 	padding-right: $gutter * 0.5;
 	padding-left: $gutter * 0.5;
