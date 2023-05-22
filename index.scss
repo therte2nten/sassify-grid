@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@use 'config' as *;
+
+@use 'core/make/col-offset' as *;
+@use 'core/make/col-ready' as *;
+@use 'core/make/col' as *;
+@use 'core/make/container-max-widths' as *;
+@use 'core/make/container' as *;
+@use 'core/make/grid-colums' as *;
+@use 'core/make/row' as *;
+
+@use 'core/media-brakepoint/between' as *;
+@use 'core/media-brakepoint/down' as *;
+@use 'core/media-brakepoint/only' as *;
+@use 'core/media-brakepoint/up' as *;
+
+@use 'core/utilities/assert/ascending' as *;
+@use 'core/utilities/assert/starts-at-zero' as *;
+@use 'core/utilities/brakepoint' as *;
+
+.container {
+	@include make-container();
+	@include make-container-max-widths();
+}
+.container-fluid {
+	@include make-container();
+}
+
+.row {
+	@include make-row();
+}
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@include make-grid-columns();
+
+@include assert-ascending($dvalues--grid-breakpoints, "$dvalues--grid-breakpoints");
+@include assert-starts-at-zero($dvalues--grid-breakpoints, "$dvalues--grid-breakpoints");
+@include assert-ascending($dvalues--container-max-widths, "$dvalues--container-max-widths");

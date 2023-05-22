@@ -1,0 +1,14 @@
+@use 'min' as *;
+@use 'next' as *;
+
+/// @name breakpoint-max
+/// @since 23.05.2023
+/// @access public
+/// @author Haba Kudzaev (therteenten)
+/// @author The Bootstrap Authors
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+/// @link https://github.com/twbs/bootstrap Bootstrap GitHub
+@function breakpoint-max($name, $breakpoints: $dvalues--grid-breakpoints) {
+	$-next: breakpoint-next($name, $breakpoints);
+	@return if($-next, breakpoint-min($-next, $breakpoints) - .02, null);
+}

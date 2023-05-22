@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+/// @name breakpoint-min
+/// @since 23.05.2023
+/// @access public
+/// @author Haba Kudzaev (therteenten)
+/// @author The Bootstrap Authors
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+/// @link https://github.com/twbs/bootstrap Bootstrap GitHub
+@function breakpoint-min($name, $breakpoints: $dvalues--grid-breakpoints) {
+	$-min: map-get($breakpoints, $name);
+	@return if($-min != 0, $-min, null);
+}

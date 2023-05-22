@@ -1,0 +1,20 @@
+/// @name media-breakpoint-down
+/// @since 23.05.2023
+/// @access public
+/// @author Haba Kudzaev (therteenten)
+/// @author The Bootstrap Authors
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+/// @link https://github.com/twbs/bootstrap Bootstrap GitHub
+@mixin media-breakpoint-down($name, $breakpoints: $dvalues--grid-breakpoints) {
+
+	$-max: breakpoint-max($name, $breakpoints);
+
+	@if $-max {
+		@media (max-width: $-max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+
+}

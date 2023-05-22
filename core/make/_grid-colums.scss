@@ -1,0 +1,80 @@
+@use "sass:math";
+@use "sass:map";
+
+@use '../../config' as *;
+@use '../make/col-offset' as *;
+@use '../make/col' as *;
+@use '../utilities/brakepoint' as *;
+@use '../media-brakepoint/up' as *;
+
+/// @name make-grid-columns
+/// @since 23.05.2023
+/// @access public
+/// @author Haba Kudzaev (therteenten)
+/// @author The Bootstrap Authors
+/// @link https://github.com/therteenten/sassify-grid Sassify Grid
+/// @link https://github.com/twbs/bootstrap Bootstrap GitHub
+/// @prop {number} $columns [$dvalues--grid-columns]
+/// @prop {number} $gutter [$dvalues--gutter-width]
+/// @prop {number} $breakpoints [$dvalues--grid-breakpoints]
+@mixin make-grid-columns($columns: $dvalues--grid-columns, $gutter: $dvalues--gutter-width, $breakpoints: $dvalues--grid-breakpoints) {
+	// Common properties for all breakpoints
+	%grid-column {
+		position: relative;
+		width: 100%;
+		padding-right: math.div($gutter, 1);
+		padding-left: math.div($gutter, 1);
+	}
+
+	@each $breakpoint in map-keys($breakpoints) {
+		$-infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		// Allow columns to stretch full width below their breakpoints
+		@for $-i from 1 through $columns {
+			.col#{$-infix}-#{$-i} {
+				@extend %grid-column;
+			}
+		}
+		.col#{$-infix},
+		.col#{$-infix}-auto {
+			@extend %grid-column;
+		}
+
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+			.col#{$-infix} {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+			}
+			.col#{$-infix}-auto {
+				flex: 0 0 auto;
+				width: auto;
+				max-width: 100%; // Reset earlier grid tiers
+			}
+
+			@for $-i from 1 through $columns {
+				.col#{$-infix}-#{$-i} {
+					@include make-col($-i, $columns);
+				}
+			}
+
+			.order#{$-infix}-first { order: -1; }
+
+			.order#{$-infix}-last { order: $columns + 1; }
+
+			@for $-i from 0 through $columns {
+				.order#{$-infix}-#{$-i} { order: $-i; }
+			}
+
+			// `$columns - 1` because offsetting by the width of an entire row isn't possible
+			@for $-i from 0 through ($columns - 1) {
+				@if not ($-infix == "" and $-i == 0) { // Avoid emitting useless .offset-0
+					.offset#{$-infix}-#{$-i} {
+						@include make-col-offset($-i, $columns);
+					}
+				}
+			}
+		}
+	}
+}
