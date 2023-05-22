@@ -1,0 +1,26 @@
+{
+  "name": "@therteenten/sassify-grid",
+  "version": "1.0.0",
+  "description": "Простая реализация 12-ти колоночной сетки на CSS-препроцессоре @sass",
+  "main": "index.scss",
+  "scripts": {
+    "test": "npx sass index.scss:dist/stylesheets/sassify-grid.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therteenten/sassify-grid.git"
+  },
+  "keywords": [
+    "sassify",
+    "sass",
+    "scss",
+    "grid-system",
+    "therteenten"
+  ],
+  "author": "Haba Kudzaev <therteenten@inbox.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/therteenten/sassify-grid/issues"
+  },
+  "homepage": "https://github.com/therteenten/sassify-grid#readme"
+}

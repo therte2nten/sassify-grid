@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    ".vscode": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    "CODEOWNERS": true,
+    "LICENSE": true
+  },
+  "npm-scripts.showStartNotification": false,
+  "workspace.isHidden": true,
+  "workspace.disableCounter": true,
+  "workspace.disableColoring": false,
+  "workspace.alwaysShowToggle": true,
+  "workspace.statusbarPriority": 0
+}
