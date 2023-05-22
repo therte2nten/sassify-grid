@@ -14,6 +14,11 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/therteenten/sassify-grid)
 ![GitHub last commit](https://img.shields.io/github/last-commit/therteenten/sassify-grid)
 
+- [Проект «Sassify» на GitHub][github-repo-sassify]
+- [Проект «Sassify Grid» на GitHub][github-repo-sassify-grid]
+- [Пакет `@therteenten/sassify` на npm][npm-sassify]
+- [Пакет `@therteenten/sassify-grid` на npm][npm-sassify-grid]
+
 
 ## Быстрый старт
 1. Перед тем как начать нужно удостовериться в том, что у Вас установлен Node.js:
@@ -35,15 +40,15 @@
 
 	```sh
 	# npm
-	npm install @therteenten/sassify-grid --save-dev
+	npm install @therteenten/sassify-grid
 	```
 	```sh
 	# Yarn
-	yarn add @therteenten/sassify-grid --dev
+	yarn add @therteenten/sassify-grid
 	```
 	```sh
 	# pnpm
-	pnpm install @therteenten/sassify-grid -D
+	pnpm install @therteenten/sassify-grid
 	```
 
 3. Далее в нужный Sass/SCSS-файл импортируем модуль sassify-grid:
@@ -89,6 +94,10 @@ Copyright (c) 2023 Haba Kudzaev <therteenten@inbox.ru>
 <!-- ! -->
 [sass-site]: https://sass-lang.com/
 [github-repo-bootstrap]: https://github.com/twbs/bootstrap
+[github-repo-sassify]: https://github.com/therteenten/sassify
+[github-repo-sassify-grid]: https://github.com/therteenten/sassify-grid
+[npm-sassify]: https://www.npmjs.com/package/@therteenten/sassify
+[npm-sassify-grid]: https://www.npmjs.com/package/@therteenten/sassify-grid
 [sassdoc-site]: http://sassdoc.com/
 [sassify-grid-telegram]: https://t.me/therte2nten
 [therteenten-vk]: https://vk.com/therteenten
