@@ -1,4 +1,4 @@
-<img src="https://github.com/therteenten/sassify-grid/blob/main/.github/images/sassify_logo_round.png?raw=true" width="96" height="96" align="right" alt="Логотип проекта Sassify Grid"> [Sassify Grid](https://github.com/therteenten/sassify-grid.git)
+<img src="https://github.com/therteenten/sassify-grid/blob/main/.github/images/sassify-grid_logo.png?raw=true" width="96" height="96" align="right" alt="Логотип проекта Sassify Grid"> [Sassify Grid](https://github.com/therteenten/sassify-grid.git)
 ===
 
 Простая реализация 12-ти колоночной Grid System из Bootstrap на языке CSS-препроцессора Sass.
