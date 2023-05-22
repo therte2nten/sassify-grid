@@ -51,10 +51,10 @@
 	pnpm install @therteenten/sassify-grid
 	```
 
-3. Далее в нужный Sass/SCSS-файл импортируем модуль sassify-grid:
+3. Далее в нужный Sass/SCSS-файл импортируем модуль:
 
 	```scss
-	@use 'node_modules/@therteenten/sassify-grid' as grid;
+	@use 'node_modules/@therteenten/sassify-grid' as *;
 	```
 
 	> Если Вы до сих пор используете директиву `@import` в Sass, то вот что говорят разработчики Sass в своем блоге:
@@ -65,7 +65,7 @@
 4. **Готово!**
 
 ## Сообщество
-У проекта sassify-grid нет какого-либо сервера в Discord и нет своего канала или чата в Telegram или где-либо еще.
+У проекта Sassify Grid нет какого-либо сервера в Discord и нет своего канала или чата в Telegram или где-либо еще.
 
 Все основные новости по проекту публикуются в личном Telegram-канале автора проекта - [@therte2nten][sassify-grid-telegram] (там же есть и чат).
 
