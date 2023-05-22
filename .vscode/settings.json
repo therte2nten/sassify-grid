@@ -6,7 +6,8 @@
     "CODEOWNERS": true,
     "LICENSE": true,
     "node_modules": true,
-    "package-lock.json": true
+    "package-lock.json": true,
+    ".github": true
   },
   "npm-scripts.showStartNotification": false,
   "workspace.isHidden": true,

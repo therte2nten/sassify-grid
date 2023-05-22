@@ -33,8 +33,6 @@
 	@include assert-ascending(config.$dvalues--grid-breakpoints, "$dvalues--grid-breakpoints");
 	@include assert-ascending(config.$dvalues--container-max-widths, "$dvalues--container-max-widths");
 
-
-
 }
 
 /// Миксин генерирует ну очень простой ресет.
